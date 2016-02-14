@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+gem 'moji'
+gem 'romaji'
+gem 'rubyzip'
+gem 'thor'
+gem 'ruby-progressbar'
+gem 'oj'
+gem 'circleci'
