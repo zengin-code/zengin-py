@@ -26,3 +26,21 @@ class ZenginCodeList(list):
     def all():
         return ZenginCodeList._list
 
+    @staticmethod
+    def find_by(**kwargs):
+        key = list(kwargs.keys())[0]
+        val = kwargs[key]
+        return ZenginCodeList._search(key, val)
+
+    @staticmethod
+    def _search(key, val):
+        result = []
+        for l in ZenginCodeList._list:
+            if key == 'code':
+                if l.__getattribute__(key) == val:
+                    return l
+            else:
+                if val in l.__getattribute__(key):
+                    result.append(l)
+
+        return result
