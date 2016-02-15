@@ -1,0 +1,5 @@
+data/src.csv
+data/src.zip
+vendor
+.bundle
+cache

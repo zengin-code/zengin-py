@@ -1,0 +1,5 @@
+build/
+dist/
+lib/
+zengin.egg-info/
+*.pyc
