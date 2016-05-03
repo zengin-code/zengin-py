@@ -27,7 +27,7 @@ Usage
 Contributing
 ===============
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/zengin_code/zengin-py
+Bug reports and pull requests are welcome on GitHub at https://github.com/zengin-code/zengin-py
 
 License
 ===============
