@@ -1,4 +1,8 @@
 include tox.ini
 include README.rst
 include LICENSE.txt
+include zengin_code/source-data/data/md5
+include zengin_code/source-data/data/updated_at
+include zengin_code/source-data/data/*.json
+include zengin_code/source-data/data/branches/*.json
 recursive-include tests *.py
