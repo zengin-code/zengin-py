@@ -7,7 +7,7 @@ import os
 from zengin_code.bank import Bank
 from zengin_code.branch import Branch
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 
 def _load(*path):
