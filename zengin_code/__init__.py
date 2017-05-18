@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division, print_function, absolute_import  # NOQA
 
+import six
 import json
 import os
 
@@ -14,8 +15,9 @@ def _load(*path):
     ret = None
     here = os.path.dirname(__file__)
     data_dir = os.path.join(here, 'source-data', 'data')
-    with open(os.path.join(data_dir, *path), 'r') as fp:
+    with open(os.path.join(data_dir, *path), 'rb') as fp:
         ret = fp.read()
+    ret = six.text_type(ret, 'utf-8')
     return ret
 
 
