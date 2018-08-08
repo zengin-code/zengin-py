@@ -2,7 +2,7 @@ machine:
   timezone:
     Asia/Tokyo
   python:
-    version: 3.5.0
+    version: 3.6.6
 
 dependencies:
   cache_directories:
@@ -12,14 +12,14 @@ dependencies:
     - git submodule foreach 'git pull origin master'
   override:
     - pip install -U pip setuptools tox tox-pyenv wheel twine
-    - pyenv local 2.7.10 3.3.3 3.4.3 3.5.0
+    - pyenv local 2.7.15 3.4.8 3.5.5 3.6.6
 
 test:
   override:
     - tox -e py27
-    - tox -e py33
     - tox -e py34
     - tox -e py35
+    - tox -e py36
     - tox -e flake8
 
 deployment:
