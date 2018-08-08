@@ -15,44 +15,7 @@ shared:
           command: tox -e $TOX_ENV
 
 jobs:
-  build_2_7:
-    <<: *shared_test
-    docker:
-      - image: circleci/python:2.7
-    environment:
-      TOX_ENV: py27
-  build_3_4:
-    <<: *shared_test
-    docker:
-      - image: circleci/python:3.4
-    environment:
-      TOX_ENV: py34
-  build_3_5:
-    <<: *shared_test
-    docker:
-      - image: circleci/python:3.5
-    environment:
-      TOX_ENV: py35
-  build_3_6:
-    <<: *shared_test
-    docker:
-      - image: circleci/python:3.6
-    environment:
-      TOX_ENV: py36
-  build_3_7:
-    <<: *shared_test
-    docker:
-      - image: circleci/python:3.7
-    environment:
-      TOX_ENV: py37
-  build_flake8:
-    <<: *shared_test
-    docker:
-      - image: circleci/python:latest
-    environment:
-      TOX_ENV: flake8
-
-  deploy:
+  build:
     docker:
       - image: circleci/python:latest
     working_directory: ~/zengin-py
@@ -67,24 +30,61 @@ jobs:
       - run:
           command: ./bin/ci/deploy
 
+  test_2_7:
+    <<: *shared_test
+    docker:
+      - image: circleci/python:2.7
+    environment:
+      TOX_ENV: py27
+  test_3_4:
+    <<: *shared_test
+    docker:
+      - image: circleci/python:3.4
+    environment:
+      TOX_ENV: py34
+  test_3_5:
+    <<: *shared_test
+    docker:
+      - image: circleci/python:3.5
+    environment:
+      TOX_ENV: py35
+  test_3_6:
+    <<: *shared_test
+    docker:
+      - image: circleci/python:3.6
+    environment:
+      TOX_ENV: py36
+  test_3_7:
+    <<: *shared_test
+    docker:
+      - image: circleci/python:3.7
+    environment:
+      TOX_ENV: py37
+  test_flake8:
+    <<: *shared_test
+    docker:
+      - image: circleci/python:latest
+    environment:
+      TOX_ENV: flake8
+
 workflows:
   version: 2
   build:
     jobs:
-      - build_2_7
-      - build_3_4
-      - build_3_5
-      - build_3_6
-      - build_3_7
-      - build_flake8
-      - deploy:
+      - test_2_7
+      - test_3_4
+      - test_3_5
+      - test_3_6
+      - test_3_7
+      - test_flake8
+      - build:
           requires:
-            - build_2_7
-            - build_3_4
-            - build_3_5
-            - build_3_6
-            - build_3_7
-            - build_flake8
+            - test_2_7
+            - test_3_4
+            - test_3_5
+            - test_3_6
+            - test_3_7
+            - test_flake8
           filters:
             branches:
               only: master
