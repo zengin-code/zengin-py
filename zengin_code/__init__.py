@@ -36,6 +36,7 @@ def load():
         for branch_code, branch_dict in branches:
             bank.add_branch(Branch(bank, **branch_dict))
 
+
 # update version
 __version__ = '{0}.{1}'.format(__version__, _load('updated_at').strip())
 # preload
