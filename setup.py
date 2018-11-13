@@ -65,11 +65,11 @@ classifiers = [
 
 
 setup(
-    name='zengin_code',
+    name='zengin_code_mod',
     version=version,
     description='bank codes and branch codes for Japanese.',
     long_description=readme,
-    url='https://github.com/zengin-code/zengin-py',
+    url='https://github.com/simota/zengin-py',
     author='Zengin Code',
     author_email='zengin-code@zeny.io',
     classifiers=classifiers,
