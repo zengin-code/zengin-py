@@ -13,7 +13,16 @@ Installation
 
 .. code-block:: bash
 
- pip install zengin_code
+ pip install -e git+https://github.com/simota/zengin-py.git
+
+requirements.txt
+----------------
+
+.. code-block:: bash
+
+ -e git+https://github.com/simota/zengin-py.git#egg=zengin_code_mod
+
+
 
 Usage
 ==============
