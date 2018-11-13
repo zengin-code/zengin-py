@@ -34,8 +34,7 @@ def load():
         branches = _load_json('branches', '{0}.json'.format(bank.code))
         branches = sorted(branches.items(), key=lambda x: x[0])
         for branch_code, branch_dict in branches:
-            bank.branches[branch_code] = Branch(bank, **branch_dict)
-
+            bank.add_branch(Branch(bank, **branch_dict))
 
 # update version
 __version__ = '{0}.{1}'.format(__version__, _load('updated_at').strip())
