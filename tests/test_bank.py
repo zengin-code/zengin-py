@@ -33,3 +33,8 @@ class TestBank(object):
         branch = Branch(b1, 999, u'試験支店', u'テスト', u'てすと', 'Test')
         b1.add_branch(branch)
         assert branch.code == b1.branch_by_name('試験支店').code
+
+    def test_bank_name(self):
+        cls = self._get_target_class()
+        bank = cls.all['0001']
+        assert bank.name == 'みずほ銀行'

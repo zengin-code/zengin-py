@@ -7,6 +7,7 @@ import os
 
 from zengin_code.bank import Bank
 from zengin_code.branch import Branch
+from zengin_code.data import BANK_NAMES
 
 __version__ = '1.1.0'
 
@@ -29,6 +30,8 @@ def _load_json(*path):
 def load():
     banks = _load_json('banks.json')
     for bank_code, bank_dict in sorted(banks.items(), key=lambda x: x[0]):
+        if bank_code in BANK_NAMES:
+            bank_dict['name'] = BANK_NAMES[bank_code]
         bank = Bank(**bank_dict)
 
         branches = _load_json('branches', '{0}.json'.format(bank.code))
