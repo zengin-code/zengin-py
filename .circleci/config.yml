@@ -30,12 +30,6 @@ jobs:
       - run:
           command: ./bin/ci/deploy
 
-  test_3_5:
-    <<: *shared_test
-    docker:
-      - image: circleci/python:3.5
-    environment:
-      TOX_ENV: py35
   test_3_6:
     <<: *shared_test
     docker:
@@ -48,6 +42,12 @@ jobs:
       - image: circleci/python:3.7
     environment:
       TOX_ENV: py37
+  test_3_8:
+    <<: *shared_test
+    docker:
+      - image: circleci/python:3.8
+    environment:
+      TOX_ENV: py38
   test_flake8:
     <<: *shared_test
     docker:
@@ -59,15 +59,15 @@ workflows:
   version: 2
   build:
     jobs:
-      - test_3_5
       - test_3_6
       - test_3_7
+      - test_3_8
       - test_flake8
       - build:
           requires:
-            - test_3_5
             - test_3_6
             - test_3_7
+            - test_3_8
             - test_flake8
           filters:
             branches:
