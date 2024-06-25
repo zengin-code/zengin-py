@@ -31,3 +31,17 @@ class Bank(six.with_metaclass(BankMeta)):
         self.roma = roma
         self.branches = OrderedDict()
         self.__class__[code] = self
+
+    def to_dict(self, without_branches=False):
+        dict = {
+            'code': self.code,
+            'name': self.name,
+            'kana': self.kana,
+            'hira': self.hira,
+            'roma': self.roma,
+        }
+        if without_branches:
+            return dict
+
+        dict['branches'] = OrderedDict({branch_code: branch.to_dict() for branch_code, branch in self.branches.items()}),
+        return dict
