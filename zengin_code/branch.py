@@ -11,3 +11,13 @@ class Branch(object):
         self.kana = kana
         self.hira = hira
         self.roma = roma
+
+    def to_dict(self):
+        return {
+            'bank': self.bank.to_dict(without_branches=True), # no transforming itself due to infinite stack consuming
+            'code': self.code,
+            'name': self.name,
+            'kana': self.kana,
+            'hira': self.hira,
+            'roma': self.roma,
+        }
