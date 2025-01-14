@@ -17,7 +17,7 @@ shared:
 jobs:
   build:
     docker:
-      - image: cimg/python:latest
+      - image: cimg/python:3.12
     working_directory: ~/zengin-py
     steps:
       - checkout
@@ -63,7 +63,7 @@ jobs:
   test_flake8:
     <<: *shared_test
     docker:
-      - image: cimg/python:latest
+      - image: cimg/python:3.12
     environment:
       TOX_ENV: flake8
 
