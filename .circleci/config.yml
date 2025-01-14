@@ -10,14 +10,14 @@ shared:
             git submodule update --init
             git submodule foreach 'git pull origin master'
       - run:
-          command: sudo pip install -U pip setuptools tox wheel twine
+          command: pip install -U pip setuptools tox wheel twine
       - run:
           command: tox -e $TOX_ENV
 
 jobs:
   build:
     docker:
-      - image: circleci/python:latest
+      - image: cimg/python:latest
     working_directory: ~/zengin-py
     steps:
       - checkout
@@ -26,7 +26,7 @@ jobs:
             git submodule update --init
             git submodule foreach 'git pull origin master'
       - run:
-          command: sudo pip install -U pip setuptools tox wheel twine
+          command: pip install -U pip setuptools tox wheel twine
       - run:
           command: ./bin/ci/deploy
 
