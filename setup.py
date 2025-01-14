@@ -6,7 +6,6 @@ import re
 
 from setuptools import setup, find_packages
 
-
 here = os.path.dirname(__file__)
 package_path = os.path.join(here, 'zengin_code')
 
@@ -25,26 +24,16 @@ requires = [
     'six',
 ]
 
-setup_requires = [
-   'pytest-runner',
-]
-
-tests_require = [
-   'pytest-cov',
-   'pytest',
-]
-
 classifiers = [
     'Development Status :: 5 - Production/Stable',
     'Intended Audience :: Developers',
     'License :: OSI Approved :: MIT License',
-    'Programming Language :: Python :: 2',
-    'Programming Language :: Python :: 2.7',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.4',
-    'Programming Language :: Python :: 3.5',
-    'Programming Language :: Python :: 3.6',
-    'Programming Language :: Python :: 3.7',
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
     'Programming Language :: Python :: Implementation :: CPython',
     'Programming Language :: Python :: Implementation :: PyPy',
     'Topic :: Internet :: WWW/HTTP',
@@ -63,8 +52,6 @@ setup(
     classifiers=classifiers,
     keywords=['zengin', 'bank', 'japanese'],
     install_requires=requires,
-    setup_requires=setup_requires,
-    tests_require=tests_require,
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
     package_data={
