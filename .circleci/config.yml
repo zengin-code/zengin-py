@@ -33,37 +33,37 @@ jobs:
   test_3_8:
     <<: *shared_test
     docker:
-      - image: circleci/python:3.8
+      - image: cimg/python:3.8
     environment:
       TOX_ENV: py38
   test_3_9:
     <<: *shared_test
     docker:
-      - image: circleci/python:3.9
+      - image: cimg/python:3.9
     environment:
       TOX_ENV: py39
   test_3_10:
     <<: *shared_test
     docker:
-      - image: circleci/python:3.10
+      - image: cimg/python:3.10
     environment:
       TOX_ENV: py310
   test_3_11:
     <<: *shared_test
     docker:
-      - image: circleci/python:3.11
+      - image: cimg/python:3.11
     environment:
       TOX_ENV: py311
   test_3_12:
     <<: *shared_test
     docker:
-      - image: circleci/python:3.12
+      - image: cimg/python:3.12
     environment:
       TOX_ENV: py312
   test_flake8:
     <<: *shared_test
     docker:
-      - image: circleci/python:latest
+      - image: cimg/python:latest
     environment:
       TOX_ENV: flake8
 
