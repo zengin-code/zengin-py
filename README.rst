@@ -2,7 +2,7 @@
 ZenginCode
 ==============================
 
-|circle| |version|
+|github| |version|
 
 The python implementation of ZenginCode.
 
@@ -46,8 +46,8 @@ License
 The package is available as open source under the terms of the `MIT License <http://opensource.org/licenses/MIT>`_ .
 
 
-.. |circle| image:: https://img.shields.io/circleci/project/zengin-code/zengin-py.svg
-    :target: https://circleci.com/gh/zengin-code/zengin-py
+.. |github| image:: https://github.com/zengin-code/zengin-py/actions/workflows/update.yml/badge.svg
+    :target: https://github.com/zengin-code/zengin-py/actions/workflows/update.yml
 
 .. |version| image:: https://img.shields.io/pypi/v/zengin_code.svg
     :target: http://pypi.python.org/pypi/zengin_code/

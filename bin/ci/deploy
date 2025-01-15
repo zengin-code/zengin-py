@@ -1,16 +1,21 @@
 #!/bin/bash
 
-[ "${RELEASE_BUILD}" != "TRUE" ] && exit 0
-
-git config user.email "zeny-man@zeny.io"
-git config user.name "zeny-man"
+git config user.name  "github-actions[bot]"
+git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
 CI_RELEASE_VERSION=`date +"v%Y-%m-%d"`
 
+git submodule update --remote
+
+if [ -z "$(git status -s)" ]; then
+  echo "No changes to commit"
+  exit 0
+fi
+
 cat > $HOME/.pypirc << EOF
 [pypi]
-username = ${PYPI_USERNAME}
-password = ${PYPI_PASSWORD}
+username = __token__
+password = ${PYPI_API_TOKEN}
 EOF
 chmod 600 $HOME/.pypirc
 
