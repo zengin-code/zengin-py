@@ -13,7 +13,7 @@ Installation
 
 .. code-block:: bash
 
- pip install zengin_code
+ $ pip install zengin_code
 
 Usage
 ==============
@@ -23,6 +23,17 @@ Usage
  from zengin_code import Bank
 
  Bank.all # => OrderedDict([(u'0001', <zengin_code.bank.Bank object at 0x1044173d0>), ...
+
+Development
+==============
+
+Testing
+---------------
+
+.. code-block:: bash
+
+ $ pip install tox
+ $ tox
 
 Contributing
 ===============
